@@ -13,6 +13,7 @@
 		58257B0B20223B7C00574BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58257B0A20223B7C00574BC9 /* Assets.xcassets */; };
 		58257B0E20223B7C00574BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58257B0C20223B7C00574BC9 /* LaunchScreen.storyboard */; };
 		58257B1920223B7C00574BC9 /* OHTTStubPocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58257B1820223B7C00574BC9 /* OHTTStubPocTests.swift */; };
+		58257B29202240B300574BC9 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58257B2420223CB000574BC9 /* OHHTTPStubs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		58257B1420223B7C00574BC9 /* OHTTStubPocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OHTTStubPocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58257B1820223B7C00574BC9 /* OHTTStubPocTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHTTStubPocTests.swift; sourceTree = "<group>"; };
 		58257B1A20223B7C00574BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58257B2420223CB000574BC9 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58257B29202240B300574BC9 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 				58257B0220223B7C00574BC9 /* OHTTStubPoc */,
 				58257B1720223B7C00574BC9 /* OHTTStubPocTests */,
 				58257B0120223B7C00574BC9 /* Products */,
+				58257B2320223CB000574BC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,14 @@
 			path = OHTTStubPocTests;
 			sourceTree = "<group>";
 		};
+		58257B2320223CB000574BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58257B2420223CB000574BC9 /* OHHTTPStubs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +118,7 @@
 				58257AFC20223B7C00574BC9 /* Sources */,
 				58257AFD20223B7C00574BC9 /* Frameworks */,
 				58257AFE20223B7C00574BC9 /* Resources */,
+				58257B2620223CD300574BC9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +206,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58257B2620223CD300574BC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OHHTTPStubs.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58257AFC20223B7C00574BC9 /* Sources */ = {
@@ -355,6 +386,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7WGQE7296;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OHTTStubPoc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.OHTTStubPoc;
@@ -370,6 +405,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7WGQE7296;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OHTTStubPoc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.OHTTStubPoc;
@@ -386,6 +425,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7WGQE7296;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OHTTStubPocTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.OHTTStubPocTests;
@@ -403,6 +446,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7WGQE7296;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OHTTStubPocTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.OHTTStubPocTests;
